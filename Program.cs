@@ -1,4 +1,6 @@
 using APEX.Data;
+using APEX.Validators;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -9,6 +11,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddTelerikBlazor();
 
+// Register the FluentValidation services
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UserValidator>());
 builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();

@@ -10,7 +10,9 @@
                 </div>
                 <div class="col-md-6 md-p md-mt-t h-100 right-box d-flex flex-column align-items-center">
                     <div class="item-bx form-box max-w-600 h-100 w-100 right-form-box">
-                        <EditForm Model="@TestUser" OnValidSubmit="HandleValidSubmit" class="form-field-box w-100">
+                <EditForm class="form-field-box w-100" Model="@TestUser" OnValidSubmit="HandleValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
                             <div class="form-logo text-center">
                                 <img src="assets/images/form-logo.png" alt="images">
                             </div>
@@ -34,8 +36,10 @@
                                            <div class="password-box" ></div>
                                     </template>
                                 </TelerikButton>
-                                   
+                                
                                 </div>
+                                <TelerikValidationMessage For="@(() => TestUser.Password)" />
+
                             </div>
                             <div class="mb-3 form-check">
                                 <div class="item-box">

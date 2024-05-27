@@ -133,3 +133,4 @@ node_modules/
 
 # Publish output
 publish/
+/wwwroot/css/site.css
