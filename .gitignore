@@ -129,9 +129,7 @@ logs/
 # NPM package directory
 node_modules/
 
-# Blazor project specific directories and files
-wwwroot/css/
-wwwroot/js/
+
 
 # Publish output
 publish/
